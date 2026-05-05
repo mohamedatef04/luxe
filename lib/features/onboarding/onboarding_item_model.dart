@@ -3,11 +3,13 @@ class OnboardingItemModel {
   final String title;
   final String description;
   final String buttonText;
+  final void Function() onPressed;
 
   OnboardingItemModel({
     required this.image,
     required this.title,
     required this.description,
     required this.buttonText,
+    required this.onPressed,
   });
 }

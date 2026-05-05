@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:luxe/features/auth/presentation/screens/forgot_password_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/login_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/password_successful_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/register_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/reset_password_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/verify_code_screen.dart';
+import 'package:luxe/features/auth/presentation/screens/verify_email_screen.dart';
 import 'routes.dart';
 import '../../features/splash/splash_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
@@ -13,6 +20,20 @@ class AppRouter {
         return _buildRoute(const SplashScreen(), settings);
       case Routes.onboarding:
         return _buildRoute(const OnboardingScreen(), settings);
+      case Routes.login:
+        return _buildRoute(const LoginScreen(), settings);
+      case Routes.register:
+        return _buildRoute(const RegisterScreen(), settings);
+      case Routes.verificationCode:
+        return _buildRoute(const VerifyCodeScreen(), settings);
+      case Routes.verifyEmail:
+        return _buildRoute(const VerifyEmailScreen(), settings);
+      case Routes.forgotPassword:
+        return _buildRoute(const ForgotPasswordScreen(), settings);
+      case Routes.resetPassword:
+        return _buildRoute(const ResetPasswordScreen(), settings);
+      case Routes.successResetPassword:
+        return _buildRoute(const PasswordSuccessfulScreen(), settings);
 
       default:
         return _buildRoute(

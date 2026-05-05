@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:luxe/assets.dart';
+import 'package:luxe/core/routes/app_router.dart';
+import 'package:luxe/core/routes/routes.dart';
 import 'package:luxe/core/theme/colors.dart';
 import 'package:luxe/features/onboarding/onboarding_item.dart';
 import 'package:luxe/features/onboarding/onboarding_item_model.dart';
@@ -37,18 +39,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         title: S.of(context).onboarding_1_title,
         description: S.of(context).onboarding_1_description,
         buttonText: S.of(context).next,
+        onPressed: () {
+          _controller.nextPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOutCubic,
+          );
+        },
       ),
       OnboardingItemModel(
         image: Assets.images.onboarding_2_png,
         title: S.of(context).onboarding_2_title,
         description: S.of(context).onboarding_2_description,
         buttonText: S.of(context).next,
+        onPressed: () {
+          _controller.nextPage(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOutCubic,
+          );
+        },
       ),
       OnboardingItemModel(
         image: Assets.images.onboarding_3_png,
         title: S.of(context).onboarding_3_title,
         description: S.of(context).onboarding_3_description,
         buttonText: S.of(context).get_started,
+        onPressed: () {
+          AppRouter.navigateAndReplace(context, Routes.login);
+        },
       ),
     ];
 

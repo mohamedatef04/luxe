@@ -22,7 +22,51 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "back_to_login": MessageLookupByLibrary.simpleMessage("Back to login"),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "Confirm Password",
+    ),
+    "contact_support": MessageLookupByLibrary.simpleMessage("Contact Support"),
+    "continue_with_google": MessageLookupByLibrary.simpleMessage(
+      "Continue with Google",
+    ),
+    "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "create_exclusive_account": MessageLookupByLibrary.simpleMessage(
+      "Create your exclusive account",
+    ),
+    "didnt_receive_code": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive the code?",
+    ),
+    "dont_have_account": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("EMAIL"),
+    "email_address": MessageLookupByLibrary.simpleMessage("EMAIL ADDRESS"),
+    "email_hint": MessageLookupByLibrary.simpleMessage("jane@example.com"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password"),
+    "forgot_password_desc": MessageLookupByLibrary.simpleMessage(
+      "Enter your email to receive a recovery code. We\'ll help you get back into your account.",
+    ),
+    "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
+    "full_name_hint": MessageLookupByLibrary.simpleMessage("Jane Doe"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_to_your_account": MessageLookupByLibrary.simpleMessage(
+      "Login to your account",
+    ),
+    "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
+      "Must be at least 8 characters long and include a number or symbol.",
+    ),
+    "need_further_assistance": MessageLookupByLibrary.simpleMessage(
+      "Need further assistance?",
+    ),
+    "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
+    "new_password_desc": MessageLookupByLibrary.simpleMessage(
+      "Please enter a new password to secure your account.",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
       "Discover a world of refined taste. We\nhandpick exclusive collections tailored to\nyour discerning lifestyle.",
@@ -42,5 +86,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_3_title": MessageLookupByLibrary.simpleMessage(
       "Exclusive Collections",
     ),
+    "or_login_with_email": MessageLookupByLibrary.simpleMessage(
+      "OR LOGIN WITH EMAIL",
+    ),
+    "or_register_with_email": MessageLookupByLibrary.simpleMessage(
+      "OR REGISTER WITH EMAIL",
+    ),
+    "password": MessageLookupByLibrary.simpleMessage("PASSWORD"),
+    "password_hint": MessageLookupByLibrary.simpleMessage("........"),
+    "password_reset_successful": MessageLookupByLibrary.simpleMessage(
+      "Password Reset Successful",
+    ),
+    "password_reset_successful_desc": MessageLookupByLibrary.simpleMessage(
+      "Your password has been securely updated. You can now access your account with your new credentials.",
+    ),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "resend": MessageLookupByLibrary.simpleMessage("Resend"),
+    "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
+    "verify": MessageLookupByLibrary.simpleMessage("Verify"),
+    "verify_identity": MessageLookupByLibrary.simpleMessage("Verify Identity"),
+    "verify_identity_desc": MessageLookupByLibrary.simpleMessage(
+      "Enter the 4-digit code sent to your email",
+    ),
+    "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
   };
 }
