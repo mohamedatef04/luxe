@@ -28,7 +28,7 @@ class CustomElevatedButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        onPressed: isLoading ? null : onPressed,
+        onPressed: onPressed,
         child: isLoading
             ? CupertinoActivityIndicator(
                 color: Theme.of(context).colorScheme.onPrimary,

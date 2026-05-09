@@ -34,7 +34,7 @@ class OnboardingItem extends StatelessWidget {
         ),
         CustomElevatedButton(
           text: onboardingItem.buttonText,
-          onPressed: () {},
+          onPressed: onboardingItem.onPressed,
         ),
       ],
     );
