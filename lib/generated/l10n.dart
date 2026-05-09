@@ -174,6 +174,26 @@ class S {
     return Intl.message('Jane Doe', name: 'full_name_hint', desc: '', args: []);
   }
 
+  /// `FIRST NAME`
+  String get first_name {
+    return Intl.message('FIRST NAME', name: 'first_name', desc: '', args: []);
+  }
+
+  /// `Jane`
+  String get first_name_hint {
+    return Intl.message('Jane', name: 'first_name_hint', desc: '', args: []);
+  }
+
+  /// `LAST NAME`
+  String get last_name {
+    return Intl.message('LAST NAME', name: 'last_name', desc: '', args: []);
+  }
+
+  /// `Doe`
+  String get last_name_hint {
+    return Intl.message('Doe', name: 'last_name_hint', desc: '', args: []);
+  }
+
   /// `EMAIL`
   String get email {
     return Intl.message('EMAIL', name: 'email', desc: '', args: []);
@@ -229,10 +249,10 @@ class S {
     );
   }
 
-  /// `Enter the 4-digit code sent to your email`
+  /// `Enter the 6-digit code sent to your email`
   String get verify_identity_desc {
     return Intl.message(
-      'Enter the 4-digit code sent to your email',
+      'Enter the 6-digit code sent to your email',
       name: 'verify_identity_desc',
       desc: '',
       args: [],
@@ -429,6 +449,226 @@ class S {
     return Intl.message(
       'Don\'t have an account?',
       name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name is required`
+  String get name_required {
+    return Intl.message(
+      'Name is required',
+      name: 'name_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is required`
+  String get email_required {
+    return Intl.message(
+      'Email is required',
+      name: 'email_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email`
+  String get invalid_email {
+    return Intl.message(
+      'Please enter a valid email',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is required`
+  String get password_required {
+    return Intl.message(
+      'Password is required',
+      name: 'password_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get password_too_short {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'password_too_short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message('Success', name: 'success', desc: '', args: []);
+  }
+
+  /// `Account created, now verify your email`
+  String get account_created_successfully {
+    return Intl.message(
+      'Account created, now verify your email',
+      name: 'account_created_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your email has been verified successfully`
+  String get your_email_verified_successfully {
+    return Intl.message(
+      'Your email has been verified successfully',
+      name: 'your_email_verified_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter the OTP code`
+  String get please_enter_otp {
+    return Intl.message(
+      'Please enter the OTP code',
+      name: 'please_enter_otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An OTP has been sent to your email address`
+  String get an_otp_has_been_sent_to_your_email_address {
+    return Intl.message(
+      'An OTP has been sent to your email address',
+      name: 'an_otp_has_been_sent_to_your_email_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number is required`
+  String get phone_required {
+    return Intl.message(
+      'Phone number is required',
+      name: 'phone_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get invalid_phone {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'invalid_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm password is required`
+  String get confirm_password_required {
+    return Intl.message(
+      'Confirm password is required',
+      name: 'confirm_password_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwords_dont_match {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwords_dont_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must contain at least one uppercase letter`
+  String get password_complexity_uppercase {
+    return Intl.message(
+      'Must contain at least one uppercase letter',
+      name: 'password_complexity_uppercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must contain at least one lowercase letter`
+  String get password_complexity_lowercase {
+    return Intl.message(
+      'Must contain at least one lowercase letter',
+      name: 'password_complexity_lowercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must contain at least one number`
+  String get password_complexity_number {
+    return Intl.message(
+      'Must contain at least one number',
+      name: 'password_complexity_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must contain at least one special character`
+  String get password_complexity_special {
+    return Intl.message(
+      'Must contain at least one special character',
+      name: 'password_complexity_special',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get field_required {
+    return Intl.message(
+      'This field is required',
+      name: 'field_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If the email is registered, you will receive an OTP to reset your password.`
+  String get forget_password_otp_notice {
+    return Intl.message(
+      'If the email is registered, you will receive an OTP to reset your password.',
+      name: 'forget_password_otp_notice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP verified successfully`
+  String get otp_verified_successfully {
+    return Intl.message(
+      'OTP verified successfully',
+      name: 'otp_verified_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password has been reset successfully`
+  String get password_has_been_reset_successfully {
+    return Intl.message(
+      'Password has been reset successfully',
+      name: 'password_has_been_reset_successfully',
       desc: '',
       args: [],
     );

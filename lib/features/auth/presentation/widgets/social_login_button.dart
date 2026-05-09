@@ -7,12 +7,14 @@ class SocialLoginButton extends StatelessWidget {
   final String text;
   final Widget icon;
   final VoidCallback onPressed;
+  final bool isLoading;
 
   const SocialLoginButton({
     super.key,
     required this.text,
     required this.icon,
     required this.onPressed,
+    this.isLoading = false,
   });
 
   @override
@@ -28,20 +30,26 @@ class SocialLoginButton extends StatelessWidget {
           ),
           side: const BorderSide(color: AppColors.border),
         ),
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon,
-            SizedBox(width: 12.w),
-            Text(
-              text,
-              style: AppTextStyles.medium16(context).copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+        onPressed: isLoading ? null : onPressed,
+        child: isLoading
+            ? SizedBox(
+                width: 22.w,
+                height: 22.h,
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  icon,
+                  SizedBox(width: 12.w),
+                  Text(
+                    text,
+                    style: AppTextStyles.medium16(context).copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
       ),
     );
   }

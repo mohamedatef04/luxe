@@ -10,7 +10,7 @@ class OtpInputField extends StatefulWidget {
 
   const OtpInputField({
     super.key,
-    this.length = 4,
+    this.length = 6,
     this.onChanged,
   });
 
@@ -25,7 +25,10 @@ class _OtpInputFieldState extends State<OtpInputField> {
   @override
   void initState() {
     super.initState();
-    _controllers = List.generate(widget.length, (index) => TextEditingController());
+    _controllers = List.generate(
+      widget.length,
+      (index) => TextEditingController(),
+    );
     _focusNodes = List.generate(widget.length, (index) => FocusNode());
   }
 
@@ -46,7 +49,7 @@ class _OtpInputFieldState extends State<OtpInputField> {
     } else if (value.isEmpty && index > 0) {
       _focusNodes[index - 1].requestFocus();
     }
-    
+
     if (widget.onChanged != null) {
       final code = _controllers.map((e) => e.text).join();
       widget.onChanged!(code);
@@ -60,8 +63,8 @@ class _OtpInputFieldState extends State<OtpInputField> {
       children: List.generate(
         widget.length,
         (index) => SizedBox(
-          width: 60.w,
-          height: 60.h,
+          width: 50.w,
+          height: 50.h,
           child: TextFormField(
             controller: _controllers[index],
             focusNode: _focusNodes[index],
@@ -87,7 +90,10 @@ class _OtpInputFieldState extends State<OtpInputField> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),
-                borderSide: const BorderSide(color: AppColors.primary, width: 2),
+                borderSide: const BorderSide(
+                  color: AppColors.primary,
+                  width: 2,
+                ),
               ),
             ),
           ),

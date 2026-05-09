@@ -22,12 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "account_created_successfully": MessageLookupByLibrary.simpleMessage(
+      "Account created, now verify your email",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "an_otp_has_been_sent_to_your_email_address":
+        MessageLookupByLibrary.simpleMessage(
+          "An OTP has been sent to your email address",
+        ),
     "back_to_login": MessageLookupByLibrary.simpleMessage("Back to login"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
+    ),
+    "confirm_password_required": MessageLookupByLibrary.simpleMessage(
+      "Confirm password is required",
     ),
     "contact_support": MessageLookupByLibrary.simpleMessage("Contact Support"),
     "continue_with_google": MessageLookupByLibrary.simpleMessage(
@@ -46,6 +56,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("EMAIL"),
     "email_address": MessageLookupByLibrary.simpleMessage("EMAIL ADDRESS"),
     "email_hint": MessageLookupByLibrary.simpleMessage("jane@example.com"),
+    "email_required": MessageLookupByLibrary.simpleMessage("Email is required"),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "field_required": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
+    "first_name": MessageLookupByLibrary.simpleMessage("FIRST NAME"),
+    "first_name_hint": MessageLookupByLibrary.simpleMessage("Jane"),
+    "forget_password_otp_notice": MessageLookupByLibrary.simpleMessage(
+      "If the email is registered, you will receive an OTP to reset your password.",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password"),
     "forgot_password_desc": MessageLookupByLibrary.simpleMessage(
       "Enter your email to receive a recovery code. We\'ll help you get back into your account.",
@@ -53,6 +73,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
     "full_name_hint": MessageLookupByLibrary.simpleMessage("Jane Doe"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email",
+    ),
+    "invalid_phone": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
+    "last_name": MessageLookupByLibrary.simpleMessage("LAST NAME"),
+    "last_name_hint": MessageLookupByLibrary.simpleMessage("Doe"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Login to your account",
@@ -60,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
       "Must be at least 8 characters long and include a number or symbol.",
     ),
+    "name_required": MessageLookupByLibrary.simpleMessage("Name is required"),
     "need_further_assistance": MessageLookupByLibrary.simpleMessage(
       "Need further assistance?",
     ),
@@ -92,23 +121,61 @@ class MessageLookup extends MessageLookupByLibrary {
     "or_register_with_email": MessageLookupByLibrary.simpleMessage(
       "OR REGISTER WITH EMAIL",
     ),
+    "otp_verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "OTP verified successfully",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("PASSWORD"),
+    "password_complexity_lowercase": MessageLookupByLibrary.simpleMessage(
+      "Must contain at least one lowercase letter",
+    ),
+    "password_complexity_number": MessageLookupByLibrary.simpleMessage(
+      "Must contain at least one number",
+    ),
+    "password_complexity_special": MessageLookupByLibrary.simpleMessage(
+      "Must contain at least one special character",
+    ),
+    "password_complexity_uppercase": MessageLookupByLibrary.simpleMessage(
+      "Must contain at least one uppercase letter",
+    ),
+    "password_has_been_reset_successfully":
+        MessageLookupByLibrary.simpleMessage(
+          "Password has been reset successfully",
+        ),
     "password_hint": MessageLookupByLibrary.simpleMessage("........"),
+    "password_required": MessageLookupByLibrary.simpleMessage(
+      "Password is required",
+    ),
     "password_reset_successful": MessageLookupByLibrary.simpleMessage(
       "Password Reset Successful",
     ),
     "password_reset_successful_desc": MessageLookupByLibrary.simpleMessage(
       "Your password has been securely updated. You can now access your account with your new credentials.",
     ),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters",
+    ),
+    "passwords_dont_match": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "phone_required": MessageLookupByLibrary.simpleMessage(
+      "Phone number is required",
+    ),
+    "please_enter_otp": MessageLookupByLibrary.simpleMessage(
+      "Please enter the OTP code",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
+    "success": MessageLookupByLibrary.simpleMessage("Success"),
     "verify": MessageLookupByLibrary.simpleMessage("Verify"),
     "verify_identity": MessageLookupByLibrary.simpleMessage("Verify Identity"),
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(
-      "Enter the 4-digit code sent to your email",
+      "Enter the 6-digit code sent to your email",
     ),
     "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+    "your_email_verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "Your email has been verified successfully",
+    ),
   };
 }

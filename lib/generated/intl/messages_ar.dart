@@ -22,14 +22,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "account_created_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الحساب بنجاح، يرجى تفعيل بريدك الإلكتروني",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
+    "an_otp_has_been_sent_to_your_email_address":
+        MessageLookupByLibrary.simpleMessage(
+          "تم إرسال رمز التحقق إلى بريدك الإلكتروني",
+        ),
     "back_to_login": MessageLookupByLibrary.simpleMessage(
       "العودة لتسجيل الدخول",
     ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
+    ),
+    "confirm_password_required": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور مطلوب",
     ),
     "contact_support": MessageLookupByLibrary.simpleMessage("تواصل مع الدعم"),
     "continue_with_google": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +58,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "عنوان البريد الإلكتروني",
     ),
     "email_hint": MessageLookupByLibrary.simpleMessage("user@example.com"),
+    "email_required": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني مطلوب",
+    ),
+    "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+    "field_required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "first_name": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
+    "first_name_hint": MessageLookupByLibrary.simpleMessage("فلان"),
+    "forget_password_otp_notice": MessageLookupByLibrary.simpleMessage(
+      "إذا كان البريد الإلكتروني مسجلاً، فستتلقى رمز تحقق لإعادة تعيين كلمة المرور.",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
     "forgot_password_desc": MessageLookupByLibrary.simpleMessage(
       "أدخل بريدك الإلكتروني لتلقي رمز استرداد الحساب. سنساعدك على استعادة حسابك.",
@@ -55,6 +75,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "full_name_hint": MessageLookupByLibrary.simpleMessage("فلان الفلاني"),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صحيح",
+    ),
+    "invalid_phone": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم هاتف صحيح",
+    ),
+    "last_name": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
+    "last_name_hint": MessageLookupByLibrary.simpleMessage("الفلاني"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول إلى حسابك",
@@ -62,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
       "يجب ألا تقل عن 8 أحرف وتتضمن رقماً أو رمزاً.",
     ),
+    "name_required": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
     "need_further_assistance": MessageLookupByLibrary.simpleMessage(
       "تحتاج مساعدة إضافية؟",
     ),
@@ -90,13 +119,45 @@ class MessageLookup extends MessageLookupByLibrary {
     "or_register_with_email": MessageLookupByLibrary.simpleMessage(
       "أو التسجيل بالبريد الإلكتروني",
     ),
+    "otp_verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم التحقق من الرمز بنجاح",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "password_complexity_lowercase": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي على حرف صغير واحد على الأقل",
+    ),
+    "password_complexity_number": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي على رقم واحد على الأقل",
+    ),
+    "password_complexity_special": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي على رمز خاص واحد على الأقل",
+    ),
+    "password_complexity_uppercase": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي على حرف كبير واحد على الأقل",
+    ),
+    "password_has_been_reset_successfully":
+        MessageLookupByLibrary.simpleMessage(
+          "تم إعادة تعيين كلمة المرور بنجاح",
+        ),
     "password_hint": MessageLookupByLibrary.simpleMessage("........"),
+    "password_required": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور مطلوبة",
+    ),
     "password_reset_successful": MessageLookupByLibrary.simpleMessage(
       "تمت إعادة التعيين بنجاح",
     ),
     "password_reset_successful_desc": MessageLookupByLibrary.simpleMessage(
       "تم تحديث كلمة المرور بأمان. يمكنك الآن الوصول إلى حسابك.",
+    ),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+    ),
+    "passwords_dont_match": MessageLookupByLibrary.simpleMessage(
+      "كلمات المرور غير متطابقة",
+    ),
+    "phone_required": MessageLookupByLibrary.simpleMessage("رقم الهاتف مطلوب"),
+    "please_enter_otp": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رمز التفعيل",
     ),
     "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة إرسال"),
@@ -104,11 +165,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "إعادة تعيين كلمة المرور",
     ),
     "send_code": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+    "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "verify_identity": MessageLookupByLibrary.simpleMessage("تأكيد الهوية"),
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(
-      "أدخل الرمز المكون من 4 أرقام المرسل إلى بريدك",
+      "أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك",
     ),
     "welcome_back": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
+    "your_email_verified_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تفعيل بريدك الإلكتروني بنجاح",
+    ),
   };
 }

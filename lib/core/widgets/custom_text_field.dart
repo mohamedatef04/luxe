@@ -39,7 +39,9 @@ class CustomTextField extends StatelessWidget {
           Text(
             label!,
             style: AppTextStyles.medium12(context).copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.7),
               letterSpacing: 1.2,
             ),
           ),
@@ -53,11 +55,17 @@ class CustomTextField extends StatelessWidget {
           maxLines: maxLines,
           enabled: enabled,
           onChanged: onChanged,
-          style: AppTextStyles.regular16(context),
+          style: AppTextStyles.regular16(context).copyWith(
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.7),
+          ),
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: AppTextStyles.regular14(context).copyWith(
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
+              color: Theme.of(
+                context,
+              ).colorScheme.onSurface.withValues(alpha: 0.5),
             ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
