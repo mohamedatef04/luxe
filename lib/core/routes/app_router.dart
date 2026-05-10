@@ -16,6 +16,8 @@ import 'package:luxe/features/auth/presentation/screens/register_screen.dart';
 import 'package:luxe/features/auth/presentation/screens/reset_password_screen.dart';
 import 'package:luxe/features/auth/presentation/screens/verify_code_screen.dart';
 import 'package:luxe/features/auth/presentation/screens/verify_email_screen.dart';
+import 'package:luxe/features/home/presentation/screens/home_screen.dart';
+import 'package:luxe/features/home/presentation/screens/root_home_screen.dart';
 import 'routes.dart';
 import '../../features/splash/splash_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
@@ -107,6 +109,12 @@ class AppRouter {
         );
       case Routes.successResetPassword:
         return _buildRoute(const PasswordSuccessfulScreen(), settings);
+
+      case Routes.rootHome:
+        return _buildRoute(const RootHomeScreen(), settings);
+
+      case Routes.home:
+        return _buildRoute(const HomeScreen(), settings);
 
       default:
         return _buildRoute(

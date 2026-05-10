@@ -69,5 +69,18 @@
     "field_required": "This field is required",
     "forget_password_otp_notice": "If the email is registered, you will receive an OTP to reset your password.",
     "otp_verified_successfully": "OTP verified successfully",
-    "password_has_been_reset_successfully": "Password has been reset successfully"
+    "password_has_been_reset_successfully": "Password has been reset successfully",
+    "home": "Home",
+    "discover": "Discover",
+    "cart": "Cart",
+    "profile": "Profile",
+    "hello_user": "Hello User 👋",
+    "search_for_items": "Search for items...",
+    "special_offer": "Summer Sale!",
+    "special_offer_desc": "Get up to 50% off\non all items.",
+    "item": "Item",
+    "offers": "Offers",
+    "theme_mode": "Theme Mode",
+    "language": "Language",
+    "logout": "Logout"
 }

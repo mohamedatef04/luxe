@@ -148,17 +148,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 24.h),
                 BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) async {
-                    const storage = FlutterSecureStorage();
                     if (state is LoginSuccess) {
-                      showToastificationBar(
-                        context: context,
-                        message: 'Login success',
-                        title: 'Success',
-                        type: ToastificationType.success,
-                        color: AppColors.success,
-                        icon: Icons.check_circle_outline,
-                      );
-
+                      const storage = FlutterSecureStorage();
                       await storage.write(
                         key: 'access_token',
                         value: state.loginResponseModel.accessToken,
@@ -166,6 +157,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       await storage.write(
                         key: 'refresh_token',
                         value: state.loginResponseModel.refreshToken,
+                      );
+                      if (!context.mounted) return;
+                      AppRouter.navigateAndRemoveUntil(
+                        context,
+                        Routes.rootHome,
                       );
                     } else if (state is LoginFailure) {
                       showToastificationBar(

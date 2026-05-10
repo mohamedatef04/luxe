@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "back_to_login": MessageLookupByLibrary.simpleMessage(
       "العودة لتسجيل الدخول",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -52,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "didnt_receive_code": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الرمز؟",
     ),
+    "discover": MessageLookupByLibrary.simpleMessage("اكتشف"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "email_address": MessageLookupByLibrary.simpleMessage(
@@ -75,18 +77,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "full_name_hint": MessageLookupByLibrary.simpleMessage("فلان الفلاني"),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "hello_user": MessageLookupByLibrary.simpleMessage("مرحباً بك 👋"),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
     "invalid_phone": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم هاتف صحيح",
     ),
+    "item": MessageLookupByLibrary.simpleMessage("عنصر"),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "last_name": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
     "last_name_hint": MessageLookupByLibrary.simpleMessage("الفلاني"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول إلى حسابك",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
       "يجب ألا تقل عن 8 أحرف وتتضمن رقماً أو رمزاً.",
     ),
@@ -99,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال كلمة مرور جديدة لتأمين حسابك.",
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "offers": MessageLookupByLibrary.simpleMessage("العروض"),
     "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
       "اكتشف عالماً من الذوق الرفيع. نحن\nننتقي مجموعات حصرية مصممة خصيصاً\nلأسلوب حياتك الراقي.",
     ),
@@ -159,13 +167,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_otp": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رمز التفعيل",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
     "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة إرسال"),
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "search_for_items": MessageLookupByLibrary.simpleMessage(
+      "ابحث عن منتجات...",
+    ),
     "send_code": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+    "special_offer": MessageLookupByLibrary.simpleMessage("تخفيضات الصيف!"),
+    "special_offer_desc": MessageLookupByLibrary.simpleMessage(
+      "احصل على خصم يصل إلى 50%\nعلى جميع العناصر.",
+    ),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
+    "theme_mode": MessageLookupByLibrary.simpleMessage("المظهر"),
     "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "verify_identity": MessageLookupByLibrary.simpleMessage("تأكيد الهوية"),
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(

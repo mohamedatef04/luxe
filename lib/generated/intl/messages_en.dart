@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "An OTP has been sent to your email address",
         ),
     "back_to_login": MessageLookupByLibrary.simpleMessage("Back to login"),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -50,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "didnt_receive_code": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
+    "discover": MessageLookupByLibrary.simpleMessage("Discover"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -73,18 +75,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
     "full_name_hint": MessageLookupByLibrary.simpleMessage("Jane Doe"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "hello_user": MessageLookupByLibrary.simpleMessage("Hello User 👋"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
     "invalid_phone": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "item": MessageLookupByLibrary.simpleMessage("Item"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "last_name": MessageLookupByLibrary.simpleMessage("LAST NAME"),
     "last_name_hint": MessageLookupByLibrary.simpleMessage("Doe"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Login to your account",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
       "Must be at least 8 characters long and include a number or symbol.",
     ),
@@ -97,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter a new password to secure your account.",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "offers": MessageLookupByLibrary.simpleMessage("Offers"),
     "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
       "Discover a world of refined taste. We\nhandpick exclusive collections tailored to\nyour discerning lifestyle.",
     ),
@@ -163,11 +171,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_otp": MessageLookupByLibrary.simpleMessage(
       "Please enter the OTP code",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "search_for_items": MessageLookupByLibrary.simpleMessage(
+      "Search for items...",
+    ),
     "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
+    "special_offer": MessageLookupByLibrary.simpleMessage("Summer Sale!"),
+    "special_offer_desc": MessageLookupByLibrary.simpleMessage(
+      "Get up to 50% off\non all items.",
+    ),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "theme_mode": MessageLookupByLibrary.simpleMessage("Theme Mode"),
     "verify": MessageLookupByLibrary.simpleMessage("Verify"),
     "verify_identity": MessageLookupByLibrary.simpleMessage("Verify Identity"),
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(

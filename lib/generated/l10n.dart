@@ -673,6 +673,91 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Discover`
+  String get discover {
+    return Intl.message('Discover', name: 'discover', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message('Cart', name: 'cart', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Hello User 👋`
+  String get hello_user {
+    return Intl.message(
+      'Hello User 👋',
+      name: 'hello_user',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for items...`
+  String get search_for_items {
+    return Intl.message(
+      'Search for items...',
+      name: 'search_for_items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summer Sale!`
+  String get special_offer {
+    return Intl.message(
+      'Summer Sale!',
+      name: 'special_offer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get up to 50% off\non all items.`
+  String get special_offer_desc {
+    return Intl.message(
+      'Get up to 50% off\non all items.',
+      name: 'special_offer_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item`
+  String get item {
+    return Intl.message('Item', name: 'item', desc: '', args: []);
+  }
+
+  /// `Offers`
+  String get offers {
+    return Intl.message('Offers', name: 'offers', desc: '', args: []);
+  }
+
+  /// `Theme Mode`
+  String get theme_mode {
+    return Intl.message('Theme Mode', name: 'theme_mode', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -69,5 +69,18 @@
     "field_required": "هذا الحقل مطلوب",
     "forget_password_otp_notice": "إذا كان البريد الإلكتروني مسجلاً، فستتلقى رمز تحقق لإعادة تعيين كلمة المرور.",
     "otp_verified_successfully": "تم التحقق من الرمز بنجاح",
-    "password_has_been_reset_successfully": "تم إعادة تعيين كلمة المرور بنجاح"
+    "password_has_been_reset_successfully": "تم إعادة تعيين كلمة المرور بنجاح",
+    "home": "الرئيسية",
+    "discover": "اكتشف",
+    "cart": "السلة",
+    "profile": "حسابي",
+    "hello_user": "مرحباً بك 👋",
+    "search_for_items": "ابحث عن منتجات...",
+    "special_offer": "تخفيضات الصيف!",
+    "special_offer_desc": "احصل على خصم يصل إلى 50%\nعلى جميع العناصر.",
+    "item": "عنصر",
+    "offers": "العروض",
+    "theme_mode": "المظهر",
+    "language": "اللغة",
+    "logout": "تسجيل الخروج"
 }
