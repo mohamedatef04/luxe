@@ -65,8 +65,7 @@ class ServerFailure extends Failures {
   }
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
-    if (statusCode == 200 ||
-        statusCode == 400 ||
+    if (statusCode == 400 ||
         statusCode == 401 ||
         statusCode == 403 ||
         statusCode == 422 ||
@@ -78,10 +77,12 @@ class ServerFailure extends Failures {
           String? errorMessage;
 
           if (errors is Map) {
-            errorMessage = errors.values.map((e) {
-              if (e is List) return e.join(', ');
-              return e.toString();
-            }).join('\n');
+            errorMessage = errors.values
+                .map((e) {
+                  if (e is List) return e.join(', ');
+                  return e.toString();
+                })
+                .join('\n');
           } else if (errors is List) {
             errorMessage = errors.join('\n');
           } else if (errors is String) {

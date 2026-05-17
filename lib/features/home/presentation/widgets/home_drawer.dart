@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:luxe/core/cubits/languge_toggle_cubit.dart';
+import 'package:luxe/core/cubits/theme_toggle_cubit.dart';
 import 'package:luxe/generated/l10n.dart';
 import 'package:luxe/core/theme/app_text_styles.dart';
+import 'package:luxe/core/theme/colors.dart';
+import 'package:luxe/features/home/presentation/widgets/drawer/drawer_header.dart'
+    as custom_drawer;
+import 'package:luxe/features/home/presentation/widgets/drawer/drawer_menu_item.dart';
+import 'package:luxe/features/home/presentation/widgets/drawer/drawer_segmented_toggle.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});
@@ -10,113 +18,138 @@ class HomeDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+    final s = S.of(context);
 
     return Drawer(
+      backgroundColor: isDark ? AppColors.backgroundDark : AppColors.background,
       child: Column(
         children: [
-          UserAccountsDrawerHeader(
-            decoration: BoxDecoration(
-              color: theme.primaryColor,
-            ),
-            currentAccountPicture: CircleAvatar(
-              backgroundColor: theme.colorScheme.surface,
-              child: Icon(
-                Icons.person,
-                size: 40.sp,
-                color: theme.primaryColor,
-              ),
-            ),
-            accountName: Text(
-              'Jane Doe',
-              style: AppTextStyles.bold16(
-                context,
-              ).copyWith(color: Colors.white),
-            ),
-            accountEmail: Text(
-              'jane@example.com',
-              style: AppTextStyles.regular14(context).copyWith(
-                color: Colors.white.withValues(alpha: 0.9),
-              ),
-            ),
-          ),
+          const custom_drawer.DrawerHeader(),
+
           Expanded(
             child: ListView(
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
               children: [
-                _buildDrawerItem(
-                  context: context,
+                DrawerMenuItem(
                   icon: Icons.local_offer_outlined,
-                  title: S.of(context).offers,
-                  onTap: () {
-                    // Navigate to offers
-                  },
+                  title: s.offers,
+                  onTap: () {},
                 ),
-                _buildDrawerItem(
-                  context: context,
-                  icon: isDark
-                      ? Icons.light_mode_outlined
-                      : Icons.dark_mode_outlined,
-                  title: S.of(context).theme_mode,
-                  onTap: () {
-                    // Toggle theme logic
-                  },
-                ),
-                _buildDrawerItem(
-                  context: context,
-                  icon: Icons.language_outlined,
-                  title: S.of(context).language,
-                  onTap: () {
-                    // Toggle language logic
-                  },
-                ),
-                _buildDrawerItem(
-                  context: context,
+                SizedBox(height: 4.h),
+                DrawerMenuItem(
                   icon: Icons.person_outline,
-                  title: S.of(context).profile,
-                  onTap: () {
-                    // Navigate to profile
+                  title: s.profile,
+                  onTap: () {},
+                ),
+                SizedBox(height: 16.h),
+
+                // Section Label
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Text(
+                    s.settings.toUpperCase(),
+                    style: AppTextStyles.bold10(context).copyWith(
+                      color: isDark
+                          ? Colors.grey.shade600
+                          : AppColors.textSecondary,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12.h),
+
+                // Theme Toggle
+                DrawerSegmentedToggle(
+                  icon: isDark
+                      ? Icons.dark_mode_rounded
+                      : Icons.light_mode_rounded,
+                  label: s.theme_mode,
+                  leftLabel: s.light_mode,
+                  rightLabel: s.dark_mode,
+                  isLeftSelected: !isDark,
+                  leftIcon: Icons.light_mode_rounded,
+                  rightIcon: Icons.dark_mode_rounded,
+                  onLeftTap: () {
+                    final currentTheme = context.read<ThemeToggleCubit>().state;
+
+                    if (currentTheme == ThemeData.light()) {
+                      return;
+                    }
+
+                    context.read<ThemeToggleCubit>().toggleTheme(
+                      ThemeData.light(),
+                    );
+                  },
+                  onRightTap: () {
+                    final currentTheme = context.read<ThemeToggleCubit>().state;
+
+                    if (currentTheme == ThemeData.dark()) {
+                      return;
+                    }
+
+                    context.read<ThemeToggleCubit>().toggleTheme(
+                      ThemeData.dark(),
+                    );
+                  },
+                ),
+                SizedBox(height: 12.h),
+
+                // Language Toggle
+                DrawerSegmentedToggle(
+                  icon: Icons.translate_rounded,
+                  label: s.language,
+                  leftLabel: 'English',
+                  rightLabel: 'العربية',
+                  isLeftSelected: !isArabic,
+                  onLeftTap: () {
+                    final currentLanguage = context
+                        .read<LanguageToggleCubit>()
+                        .state;
+                    if (currentLanguage == const Locale('en')) {
+                      return;
+                    }
+                    context.read<LanguageToggleCubit>().languageToggle(
+                      const Locale('en'),
+                    );
+                  },
+                  onRightTap: () {
+                    final currentLanguage = context
+                        .read<LanguageToggleCubit>()
+                        .state;
+                    if (currentLanguage == const Locale('ar')) {
+                      return;
+                    }
+                    context.read<LanguageToggleCubit>().languageToggle(
+                      const Locale('ar'),
+                    );
                   },
                 ),
               ],
             ),
           ),
-          const Divider(),
-          _buildDrawerItem(
-            context: context,
-            icon: Icons.logout,
-            title: S.of(context).logout,
-            iconColor: theme.colorScheme.error,
-            textColor: theme.colorScheme.error,
-            onTap: () {
-              // Logout logic
-            },
+
+          // Logout
+          Divider(
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.08)
+                : Colors.grey.shade200,
           ),
-          SizedBox(height: 16.h), // Safe area bottom padding
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: DrawerMenuItem(
+              icon: Icons.logout_rounded,
+              title: s.logout,
+              iconColor: theme.colorScheme.error,
+              textColor: theme.colorScheme.error,
+              onTap: () {
+                // Logout logic
+              },
+            ),
+          ),
+          SizedBox(height: 16.h),
         ],
       ),
-    );
-  }
-
-  Widget _buildDrawerItem({
-    required BuildContext context,
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-    Color? iconColor,
-    Color? textColor,
-  }) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: iconColor ?? Theme.of(context).iconTheme.color,
-      ),
-      title: Text(
-        title,
-        style: AppTextStyles.medium16(context).copyWith(
-          color: textColor ?? Theme.of(context).colorScheme.onSurface,
-        ),
-      ),
-      onTap: onTap,
     );
   }
 }

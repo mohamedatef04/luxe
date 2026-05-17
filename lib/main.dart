@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:luxe/core/cubits/languge_toggle_cubit.dart';
+import 'package:luxe/core/cubits/theme_toggle_cubit.dart';
 import 'package:luxe/core/di/get_it_.dart';
+import 'package:luxe/core/services/shared_pref_service.dart';
 import 'package:luxe/generated/l10n.dart';
 import 'core/routes/app_router.dart';
 import 'core/routes/routes.dart';
-import 'core/theme/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefrenceService.initSharedPref();
   await EasyLocalization.ensureInitialized();
   await dotenv.load(fileName: ".env");
   // Set preferred orientations
@@ -44,21 +48,39 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.lightTheme,
-          themeMode: ThemeMode.system,
-          initialRoute: Routes.splash,
-          onGenerateRoute: AppRouter.generateRoute,
-
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => ThemeToggleCubit(),
+            ),
+            BlocProvider(
+              create: (context) => LanguageToggleCubit(),
+            ),
           ],
-          supportedLocales: S.delegate.supportedLocales,
-          locale: const Locale('en'),
+          child: BlocBuilder<ThemeToggleCubit, ThemeData>(
+            builder: (context, theme) {
+              return BlocBuilder<LanguageToggleCubit, Locale>(
+                builder: (context, locale) {
+                  return MaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    theme: theme,
+
+                    initialRoute: Routes.splash,
+                    onGenerateRoute: AppRouter.generateRoute,
+
+                    localizationsDelegates: const [
+                      S.delegate,
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: S.delegate.supportedLocales,
+                    locale: locale,
+                  );
+                },
+              );
+            },
+          ),
         );
       },
     );

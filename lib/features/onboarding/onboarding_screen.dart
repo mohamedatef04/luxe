@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:luxe/assets.dart';
 import 'package:luxe/core/routes/app_router.dart';
 import 'package:luxe/core/routes/routes.dart';
+import 'package:luxe/core/services/shared_pref_service.dart';
 import 'package:luxe/core/theme/colors.dart';
 import 'package:luxe/features/onboarding/onboarding_item.dart';
 import 'package:luxe/features/onboarding/onboarding_item_model.dart';
@@ -63,7 +64,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         title: S.of(context).onboarding_3_title,
         description: S.of(context).onboarding_3_description,
         buttonText: S.of(context).get_started,
-        onPressed: () {
+        onPressed: () async {
+          await SharedPrefrenceService.setBool('is_visited', true);
+          if (!context.mounted) return;
           AppRouter.navigateAndReplace(context, Routes.login);
         },
       ),

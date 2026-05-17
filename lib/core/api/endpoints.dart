@@ -7,4 +7,6 @@ class Endpoints {
   static const String verifyOtp = 'api/auth/validate-otp';
   static const String resetPassword = 'api/auth/reset-password';
   static const String googleLogin = 'api/auth/google/mobile';
+  static const String getProducts = 'api/products';
+  static const String getOffers = 'api/offers';
 }

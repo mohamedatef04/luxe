@@ -13,6 +13,7 @@ class Routes {
   static const String verifyEmail = '/verify_email';
   static const String rootHome = '/root_home';
   static const String home = '/home';
+  static const String productDetails = '/product_details';
   static const String explore = '/explore';
   static const String cart = '/cart';
   static const String profile = '/profile';

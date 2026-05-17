@@ -23,18 +23,18 @@ class ApiService {
         maxWidth: 90,
       ),
     );
-    // dio.interceptors.add(
-    //   InterceptorsWrapper(
-    //     onRequest: (options, handler) async {
-    //       const storage = FlutterSecureStorage();
-    //       final token = await storage.read(key: 'token');
-    //       if (token != null) {
-    //         options.headers['Authorization'] = 'Bearer $token';
-    //       }
-    //       return handler.next(options);
-    //     },
-    //   ),
-    // );
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          const storage = FlutterSecureStorage();
+          final token = await storage.read(key: 'access_token');
+          if (token != null) {
+            options.headers['Authorization'] = 'Bearer $token';
+          }
+          return handler.next(options);
+        },
+      ),
+    );
   }
 
   // Requests

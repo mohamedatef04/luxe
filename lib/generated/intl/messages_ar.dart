@@ -20,11 +20,14 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(count) => "${count} قطعة متاحة";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "account_created_successfully": MessageLookupByLibrary.simpleMessage(
       "تم إنشاء الحساب بنجاح، يرجى تفعيل بريدك الإلكتروني",
     ),
+    "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
@@ -32,10 +35,14 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "تم إرسال رمز التحقق إلى بريدك الإلكتروني",
         ),
+    "appearance": MessageLookupByLibrary.simpleMessage("المظهر"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "back_to_login": MessageLookupByLibrary.simpleMessage(
       "العودة لتسجيل الدخول",
     ),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+    "category": MessageLookupByLibrary.simpleMessage("الفئة"),
+    "color": MessageLookupByLibrary.simpleMessage("اللون"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -50,9 +57,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_exclusive_account": MessageLookupByLibrary.simpleMessage(
       "أنشئ حسابك الحصري",
     ),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("داكن"),
+    "description": MessageLookupByLibrary.simpleMessage("الوصف"),
+    "details": MessageLookupByLibrary.simpleMessage("التفاصيل"),
     "didnt_receive_code": MessageLookupByLibrary.simpleMessage(
       "لم تستلم الرمز؟",
     ),
+    "discount": MessageLookupByLibrary.simpleMessage("الخصم"),
     "discover": MessageLookupByLibrary.simpleMessage("اكتشف"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -63,7 +74,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_required": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني مطلوب",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+    "favorite": MessageLookupByLibrary.simpleMessage("مفضلة"),
     "field_required": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "first_name": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
     "first_name_hint": MessageLookupByLibrary.simpleMessage("فلان"),
@@ -79,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "hello_user": MessageLookupByLibrary.simpleMessage("مرحباً بك 👋"),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "in_stock": MessageLookupByLibrary.simpleMessage("متوفر"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
@@ -86,9 +100,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم هاتف صحيح",
     ),
     "item": MessageLookupByLibrary.simpleMessage("عنصر"),
+    "items_available": m0,
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "last_name": MessageLookupByLibrary.simpleMessage("اسم العائلة"),
     "last_name_hint": MessageLookupByLibrary.simpleMessage("الفلاني"),
+    "light_mode": MessageLookupByLibrary.simpleMessage("فاتح"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول إلى حسابك",
@@ -106,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال كلمة مرور جديدة لتأمين حسابك.",
     ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "off": MessageLookupByLibrary.simpleMessage("خصم"),
     "offers": MessageLookupByLibrary.simpleMessage("العروض"),
     "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
       "اكتشف عالماً من الذوق الرفيع. نحن\nننتقي مجموعات حصرية مصممة خصيصاً\nلأسلوب حياتك الراقي.",
@@ -130,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "otp_verified_successfully": MessageLookupByLibrary.simpleMessage(
       "تم التحقق من الرمز بنجاح",
     ),
+    "out_of_stock": MessageLookupByLibrary.simpleMessage("غير متوفر"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_complexity_lowercase": MessageLookupByLibrary.simpleMessage(
       "يجب أن تحتوي على حرف صغير واحد على الأقل",
@@ -167,20 +185,28 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_otp": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رمز التفعيل",
     ),
+    "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "product_code": MessageLookupByLibrary.simpleMessage("رمز المنتج"),
+    "product_details": MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
     "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "rating": MessageLookupByLibrary.simpleMessage("التقييم"),
     "register": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "resend": MessageLookupByLibrary.simpleMessage("إعادة إرسال"),
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
     "search_for_items": MessageLookupByLibrary.simpleMessage(
       "ابحث عن منتجات...",
     ),
     "send_code": MessageLookupByLibrary.simpleMessage("إرسال الرمز"),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+    "share": MessageLookupByLibrary.simpleMessage("مشاركة"),
     "special_offer": MessageLookupByLibrary.simpleMessage("تخفيضات الصيف!"),
     "special_offer_desc": MessageLookupByLibrary.simpleMessage(
       "احصل على خصم يصل إلى 50%\nعلى جميع العناصر.",
     ),
+    "stock": MessageLookupByLibrary.simpleMessage("المخزون"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "theme_mode": MessageLookupByLibrary.simpleMessage("المظهر"),
     "verify": MessageLookupByLibrary.simpleMessage("تأكيد"),
@@ -188,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(
       "أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك",
     ),
+    "weight": MessageLookupByLibrary.simpleMessage("الوزن"),
     "welcome_back": MessageLookupByLibrary.simpleMessage("مرحباً بعودتك"),
     "your_email_verified_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تفعيل بريدك الإلكتروني بنجاح",

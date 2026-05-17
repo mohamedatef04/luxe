@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luxe/features/home/data/models/product_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:luxe/core/di/get_it_.dart';
 import 'package:luxe/features/auth/presentation/cubits/cubit/google_login_cubit.dart';
@@ -17,6 +18,7 @@ import 'package:luxe/features/auth/presentation/screens/reset_password_screen.da
 import 'package:luxe/features/auth/presentation/screens/verify_code_screen.dart';
 import 'package:luxe/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:luxe/features/home/presentation/screens/home_screen.dart';
+import 'package:luxe/features/home/presentation/screens/product_details_screen.dart';
 import 'package:luxe/features/home/presentation/screens/root_home_screen.dart';
 import 'routes.dart';
 import '../../features/splash/splash_screen.dart';
@@ -114,7 +116,17 @@ class AppRouter {
         return _buildRoute(const RootHomeScreen(), settings);
 
       case Routes.home:
-        return _buildRoute(const HomeScreen(), settings);
+        return _buildRoute(
+          const HomeScreen(),
+          settings,
+        );
+      case Routes.productDetails:
+        return _buildRoute(
+          ProductDetailsScreen(
+            product: settings.arguments as ProductModel,
+          ),
+          settings,
+        );
 
       default:
         return _buildRoute(

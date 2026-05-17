@@ -11,16 +11,21 @@ import 'package:luxe/features/auth/presentation/cubits/verify_email/verify_email
 import 'package:luxe/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:luxe/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:luxe/features/auth/presentation/cubits/resend_otp/resend_otp_cubit.dart';
+import 'package:luxe/features/home/data/data_source/home_data_source.dart';
+import 'package:luxe/features/home/data/repos/home_repo.dart';
+import 'package:luxe/features/home/presentation/cubits/get_offers_cubit/get_offers_cubit.dart';
+import 'package:luxe/features/home/presentation/cubits/get_products_cubit/get_products_cubit.dart';
 
 GetIt getIt = GetIt.instance;
 
 void setupLocator() {
   getIt.registerFactory(() => ApiService(Dio()));
+
   getIt.registerFactory(
-    () => RemoteDataSourceImpl(apiService: getIt<ApiService>()),
+    () => AuthDataSourceImpl(apiService: getIt<ApiService>()),
   );
   getIt.registerFactory(
-    () => AuthRepo(remoteDataSource: getIt<RemoteDataSourceImpl>()),
+    () => AuthRepo(authDataSource: getIt<AuthDataSourceImpl>()),
   );
   getIt.registerLazySingleton(
     () => RegisterCubit(getIt<AuthRepo>()),
@@ -45,5 +50,19 @@ void setupLocator() {
   );
   getIt.registerLazySingleton(
     () => GoogleLoginCubit(getIt<AuthRepo>()),
+  );
+
+  //Home
+  getIt.registerFactory(
+    () => HomeDataSourceImpl(getIt<ApiService>()),
+  );
+  getIt.registerFactory(
+    () => HomeRepo(getIt<HomeDataSourceImpl>()),
+  );
+  getIt.registerLazySingleton(
+    () => GetProductsCubit(getIt<HomeRepo>()),
+  );
+  getIt.registerLazySingleton(
+    () => GetOffersCubit(getIt<HomeRepo>()),
   );
 }
