@@ -104,7 +104,7 @@ class AppTheme {
         primary: AppColors.primary,
         secondary: AppColors.secondary,
         error: AppColors.error,
-        surface: AppColors.surfaceDark,
+        surface: AppColors.backgroundDark,
         onPrimary: AppColors.textOnPrimary,
         onSecondary: AppColors.textOnPrimary,
         onError: AppColors.textOnPrimary,
@@ -112,7 +112,7 @@ class AppTheme {
       ),
 
       // AppBar Theme
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         elevation: 0,
         centerTitle: true,
         backgroundColor: AppColors.backgroundDark,

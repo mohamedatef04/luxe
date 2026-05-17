@@ -673,6 +673,236 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Discover`
+  String get discover {
+    return Intl.message('Discover', name: 'discover', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message('Cart', name: 'cart', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Hello User 👋`
+  String get hello_user {
+    return Intl.message(
+      'Hello User 👋',
+      name: 'hello_user',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for items...`
+  String get search_for_items {
+    return Intl.message(
+      'Search for items...',
+      name: 'search_for_items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summer Sale!`
+  String get special_offer {
+    return Intl.message(
+      'Summer Sale!',
+      name: 'special_offer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get up to 50% off\non all items.`
+  String get special_offer_desc {
+    return Intl.message(
+      'Get up to 50% off\non all items.',
+      name: 'special_offer_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item`
+  String get item {
+    return Intl.message('Item', name: 'item', desc: '', args: []);
+  }
+
+  /// `Offers`
+  String get offers {
+    return Intl.message('Offers', name: 'offers', desc: '', args: []);
+  }
+
+  /// `Theme Mode`
+  String get theme_mode {
+    return Intl.message('Theme Mode', name: 'theme_mode', desc: '', args: []);
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message('Language', name: 'language', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `Product Details`
+  String get product_details {
+    return Intl.message(
+      'Product Details',
+      name: 'product_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Details`
+  String get details {
+    return Intl.message('Details', name: 'details', desc: '', args: []);
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `Stock`
+  String get stock {
+    return Intl.message('Stock', name: 'stock', desc: '', args: []);
+  }
+
+  /// `In Stock`
+  String get in_stock {
+    return Intl.message('In Stock', name: 'in_stock', desc: '', args: []);
+  }
+
+  /// `Out of Stock`
+  String get out_of_stock {
+    return Intl.message(
+      'Out of Stock',
+      name: 'out_of_stock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight {
+    return Intl.message('Weight', name: 'weight', desc: '', args: []);
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message('Category', name: 'category', desc: '', args: []);
+  }
+
+  /// `Color`
+  String get color {
+    return Intl.message('Color', name: 'color', desc: '', args: []);
+  }
+
+  /// `Product Code`
+  String get product_code {
+    return Intl.message(
+      'Product Code',
+      name: 'product_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
+  }
+
+  /// `Rating`
+  String get rating {
+    return Intl.message('Rating', name: 'rating', desc: '', args: []);
+  }
+
+  /// `Discount`
+  String get discount {
+    return Intl.message('Discount', name: 'discount', desc: '', args: []);
+  }
+
+  /// `Add to Cart`
+  String get add_to_cart {
+    return Intl.message('Add to Cart', name: 'add_to_cart', desc: '', args: []);
+  }
+
+  /// `{count} items available`
+  String items_available(Object count) {
+    return Intl.message(
+      '$count items available',
+      name: 'items_available',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `OFF`
+  String get off {
+    return Intl.message('OFF', name: 'off', desc: '', args: []);
+  }
+
+  /// `Share`
+  String get share {
+    return Intl.message('Share', name: 'share', desc: '', args: []);
+  }
+
+  /// `Favorite`
+  String get favorite {
+    return Intl.message('Favorite', name: 'favorite', desc: '', args: []);
+  }
+
+  /// `Dark`
+  String get dark_mode {
+    return Intl.message('Dark', name: 'dark_mode', desc: '', args: []);
+  }
+
+  /// `Light`
+  String get light_mode {
+    return Intl.message('Light', name: 'light_mode', desc: '', args: []);
+  }
+
+  /// `العربية`
+  String get arabic {
+    return Intl.message('العربية', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Appearance`
+  String get appearance {
+    return Intl.message('Appearance', name: 'appearance', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

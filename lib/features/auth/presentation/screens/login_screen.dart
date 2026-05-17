@@ -6,6 +6,7 @@ import 'package:luxe/core/routes/app_router.dart';
 import 'package:luxe/core/routes/routes.dart';
 import 'package:luxe/core/theme/app_text_styles.dart';
 import 'package:luxe/core/theme/colors.dart';
+import 'package:luxe/core/utils/constants.dart';
 import 'package:luxe/core/widgets/custom_elevated_button.dart';
 import 'package:luxe/core/widgets/custom_text_field.dart';
 import 'package:luxe/core/widgets/toastfication.dart';
@@ -148,24 +149,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 24.h),
                 BlocConsumer<LoginCubit, LoginState>(
                   listener: (context, state) async {
-                    const storage = FlutterSecureStorage();
                     if (state is LoginSuccess) {
-                      showToastificationBar(
-                        context: context,
-                        message: 'Login success',
-                        title: 'Success',
-                        type: ToastificationType.success,
-                        color: AppColors.success,
-                        icon: Icons.check_circle_outline,
-                      );
-
+                      const storage = FlutterSecureStorage();
                       await storage.write(
-                        key: 'access_token',
+                        key: AppConstants.accessTokenKey,
                         value: state.loginResponseModel.accessToken,
                       );
                       await storage.write(
-                        key: 'refresh_token',
+                        key: AppConstants.refreshTokenKey,
                         value: state.loginResponseModel.refreshToken,
+                      );
+                      if (!context.mounted) return;
+                      AppRouter.navigateAndRemoveUntil(
+                        context,
+                        Routes.rootHome,
                       );
                     } else if (state is LoginFailure) {
                       showToastificationBar(

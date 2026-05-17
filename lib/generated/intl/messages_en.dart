@@ -20,11 +20,14 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(count) => "${count} items available";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "account_created_successfully": MessageLookupByLibrary.simpleMessage(
       "Account created, now verify your email",
     ),
+    "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
@@ -32,7 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "An OTP has been sent to your email address",
         ),
+    "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
+    "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "back_to_login": MessageLookupByLibrary.simpleMessage("Back to login"),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "category": MessageLookupByLibrary.simpleMessage("Category"),
+    "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -47,9 +55,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_exclusive_account": MessageLookupByLibrary.simpleMessage(
       "Create your exclusive account",
     ),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("Dark"),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
+    "details": MessageLookupByLibrary.simpleMessage("Details"),
     "didnt_receive_code": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
+    "discount": MessageLookupByLibrary.simpleMessage("Discount"),
+    "discover": MessageLookupByLibrary.simpleMessage("Discover"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account?",
     ),
@@ -57,7 +70,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_address": MessageLookupByLibrary.simpleMessage("EMAIL ADDRESS"),
     "email_hint": MessageLookupByLibrary.simpleMessage("jane@example.com"),
     "email_required": MessageLookupByLibrary.simpleMessage("Email is required"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
+    "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
     "field_required": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
@@ -73,18 +88,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
     "full_name_hint": MessageLookupByLibrary.simpleMessage("Jane Doe"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "hello_user": MessageLookupByLibrary.simpleMessage("Hello User 👋"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "in_stock": MessageLookupByLibrary.simpleMessage("In Stock"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
     "invalid_phone": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
+    "item": MessageLookupByLibrary.simpleMessage("Item"),
+    "items_available": m0,
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "last_name": MessageLookupByLibrary.simpleMessage("LAST NAME"),
     "last_name_hint": MessageLookupByLibrary.simpleMessage("Doe"),
+    "light_mode": MessageLookupByLibrary.simpleMessage("Light"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_to_your_account": MessageLookupByLibrary.simpleMessage(
       "Login to your account",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "must_be_at_least_8_chars": MessageLookupByLibrary.simpleMessage(
       "Must be at least 8 characters long and include a number or symbol.",
     ),
@@ -97,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter a new password to secure your account.",
     ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "off": MessageLookupByLibrary.simpleMessage("OFF"),
+    "offers": MessageLookupByLibrary.simpleMessage("Offers"),
     "onboarding_1_description": MessageLookupByLibrary.simpleMessage(
       "Discover a world of refined taste. We\nhandpick exclusive collections tailored to\nyour discerning lifestyle.",
     ),
@@ -124,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "otp_verified_successfully": MessageLookupByLibrary.simpleMessage(
       "OTP verified successfully",
     ),
+    "out_of_stock": MessageLookupByLibrary.simpleMessage("Out of Stock"),
     "password": MessageLookupByLibrary.simpleMessage("PASSWORD"),
     "password_complexity_lowercase": MessageLookupByLibrary.simpleMessage(
       "Must contain at least one lowercase letter",
@@ -163,16 +189,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_otp": MessageLookupByLibrary.simpleMessage(
       "Please enter the OTP code",
     ),
+    "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "product_code": MessageLookupByLibrary.simpleMessage("Product Code"),
+    "product_details": MessageLookupByLibrary.simpleMessage("Product Details"),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "rating": MessageLookupByLibrary.simpleMessage("Rating"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "resend": MessageLookupByLibrary.simpleMessage("Resend"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+    "search_for_items": MessageLookupByLibrary.simpleMessage(
+      "Search for items...",
+    ),
     "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "share": MessageLookupByLibrary.simpleMessage("Share"),
+    "special_offer": MessageLookupByLibrary.simpleMessage("Summer Sale!"),
+    "special_offer_desc": MessageLookupByLibrary.simpleMessage(
+      "Get up to 50% off\non all items.",
+    ),
+    "stock": MessageLookupByLibrary.simpleMessage("Stock"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "theme_mode": MessageLookupByLibrary.simpleMessage("Theme Mode"),
     "verify": MessageLookupByLibrary.simpleMessage("Verify"),
     "verify_identity": MessageLookupByLibrary.simpleMessage("Verify Identity"),
     "verify_identity_desc": MessageLookupByLibrary.simpleMessage(
       "Enter the 6-digit code sent to your email",
     ),
+    "weight": MessageLookupByLibrary.simpleMessage("Weight"),
     "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
     "your_email_verified_successfully": MessageLookupByLibrary.simpleMessage(
       "Your email has been verified successfully",

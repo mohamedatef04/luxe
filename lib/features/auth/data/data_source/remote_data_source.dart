@@ -2,7 +2,7 @@ import 'package:luxe/core/api/api_service.dart';
 import 'package:luxe/core/api/endpoints.dart';
 import 'package:luxe/features/auth/data/models/login_response_model.dart';
 
-abstract class RemoteDataSource {
+abstract class AuthDataSource {
   Future<void> register({
     required String firstName,
     required String lastName,
@@ -33,9 +33,9 @@ abstract class RemoteDataSource {
   Future<LoginResponseModel> googleLogin({required String idToken});
 }
 
-class RemoteDataSourceImpl implements RemoteDataSource {
+class AuthDataSourceImpl implements AuthDataSource {
   final ApiService apiService;
-  RemoteDataSourceImpl({required this.apiService});
+  AuthDataSourceImpl({required this.apiService});
   @override
   Future<void> register({
     required String firstName,

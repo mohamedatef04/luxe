@@ -5,8 +5,8 @@ import 'package:luxe/features/auth/data/data_source/remote_data_source.dart';
 import 'package:luxe/features/auth/data/models/login_response_model.dart';
 
 class AuthRepo {
-  final RemoteDataSource remoteDataSource;
-  AuthRepo({required this.remoteDataSource});
+  final AuthDataSource authDataSource;
+  AuthRepo({required this.authDataSource});
 
   Future<Either<Failures, void>> register({
     required String firstName,
@@ -15,7 +15,7 @@ class AuthRepo {
     required String password,
   }) async {
     try {
-      await remoteDataSource.register(
+      await authDataSource.register(
         firstName: firstName,
         lastName: lastName,
         email: email,
@@ -34,7 +34,7 @@ class AuthRepo {
     required String password,
   }) async {
     try {
-      final response = await remoteDataSource.login(
+      final response = await authDataSource.login(
         email: email,
         password: password,
       );
@@ -51,7 +51,7 @@ class AuthRepo {
     required String otp,
   }) async {
     try {
-      await remoteDataSource.verifyEmail(
+      await authDataSource.verifyEmail(
         email: email,
         otp: otp,
       );
@@ -67,7 +67,7 @@ class AuthRepo {
     required String email,
   }) async {
     try {
-      await remoteDataSource.resendOtp(email: email);
+      await authDataSource.resendOtp(email: email);
       return right(null);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioExeption(e));
@@ -80,7 +80,7 @@ class AuthRepo {
     required String email,
   }) async {
     try {
-      await remoteDataSource.forgetPassword(email: email);
+      await authDataSource.forgetPassword(email: email);
       return right(null);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioExeption(e));
@@ -94,7 +94,7 @@ class AuthRepo {
     required String otp,
   }) async {
     try {
-      await remoteDataSource.verifyOtp(email: email, otp: otp);
+      await authDataSource.verifyOtp(email: email, otp: otp);
       return right(null);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioExeption(e));
@@ -109,7 +109,7 @@ class AuthRepo {
     required String otp,
   }) async {
     try {
-      await remoteDataSource.resetPassword(
+      await authDataSource.resetPassword(
         email: email,
         newPassword: newPassword,
         otp: otp,
@@ -126,7 +126,7 @@ class AuthRepo {
     required String idToken,
   }) async {
     try {
-      final response = await remoteDataSource.googleLogin(idToken: idToken);
+      final response = await authDataSource.googleLogin(idToken: idToken);
       return right(response);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioExeption(e));
