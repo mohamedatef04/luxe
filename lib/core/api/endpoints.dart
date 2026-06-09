@@ -9,4 +9,6 @@ class Endpoints {
   static const String googleLogin = 'api/auth/google/mobile';
   static const String getProducts = 'api/products';
   static const String getOffers = 'api/offers';
+  static const String getCategories = 'api/categories';
+  static const String refreshToken = 'api/auth/refresh-token';
 }
