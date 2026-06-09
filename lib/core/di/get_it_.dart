@@ -11,6 +11,9 @@ import 'package:luxe/features/auth/presentation/cubits/verify_email/verify_email
 import 'package:luxe/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:luxe/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:luxe/features/auth/presentation/cubits/resend_otp/resend_otp_cubit.dart';
+import 'package:luxe/features/explore/data/data_source/explore_data_source.dart';
+import 'package:luxe/features/explore/data/repos/explore_repo.dart';
+import 'package:luxe/features/explore/presentation/cubits/cubit/get_categories_cubit.dart';
 import 'package:luxe/features/home/data/data_source/home_data_source.dart';
 import 'package:luxe/features/home/data/repos/home_repo.dart';
 import 'package:luxe/features/home/presentation/cubits/get_offers_cubit/get_offers_cubit.dart';
@@ -64,5 +67,16 @@ void setupLocator() {
   );
   getIt.registerLazySingleton(
     () => GetOffersCubit(getIt<HomeRepo>()),
+  );
+
+  //Explore
+  getIt.registerFactory(
+    () => ExploreDataSourceImpl(getIt<ApiService>()),
+  );
+  getIt.registerFactory(
+    () => ExploreRepo(getIt<ExploreDataSourceImpl>()),
+  );
+  getIt.registerLazySingleton(
+    () => GetCategoriesCubit(getIt<ExploreRepo>()),
   );
 }
